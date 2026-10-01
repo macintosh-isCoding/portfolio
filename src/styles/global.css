@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --color-base: #0b0b0d;
+  --color-surface: #151518;
+  --color-ink: #f5f5f7;
+  --color-muted: #a1a1a6;
+}
+
+@theme inline {
+  --color-accent: var(--accent);
+}
+
+:root {
+  --accent: #6ea8ff;
+}
+[data-project="final-year-project"] {
+  --accent: #ff4d8d;
+}
+[data-project="internship"] {
+  --accent: #2ee6a6;
+}

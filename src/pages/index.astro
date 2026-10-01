@@ -1,12 +1,10 @@
 ---
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 ---
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Maxence Klein's Portfolio</title>
-  </head>
-  <body class="bg-black text-white grid place-items-center min-h-screen">
-    <h1 class="text-5xl font-bold text-fuchsia-500">Hello, portfolio!</h1>
-  </body>
-</html>
+<Layout title="Maxence Klein's Portfolio" >
+  <section class="grid min-h-[80vh] place-items-center px-6">
+    <h1 class="text-5xl font-semibold tracking-tight md:text-7xl">
+      Hello, <span class="text-accent">portfolio.</span>
+    </h1>
+  </section>
+</Layout>

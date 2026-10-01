@@ -1,0 +1,19 @@
+---
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/projects/final-year-project', label: 'Final-year project' },
+  { href: '/projects/internship', label: 'Internship' },
+];
+---
+<header class="sticky top-0 z-50 border-b border-white/10 bg-base/70 backdrop-blur-xl">
+  <nav class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
+    <a href="/" class="text-sm font-semibold tracking-tight">Maxence Klein</a>
+    <ul class="flex gap-8 text-sm text-muted">
+      {links.map((link) => (
+        <li>
+          <a href={link.href} class="transition-colors hover:text-ink">{link.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
