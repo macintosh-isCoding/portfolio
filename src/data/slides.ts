@@ -1,0 +1,34 @@
+export const slides = [
+  {
+    href: '/projects/final-year-project',
+    eyebrow: 'Final-year project · 2026',
+    title: 'Worlds that never repeat.',
+    text: 'An intelligent roguelike where procedural generation meets reinforcement learning.',
+    cta: 'Discover the project',
+    color: '#ff4d8d',
+  },
+  {
+    href: '/experiences/loreal',
+    eyebrow: "Internship report · L'Oréal",
+    title: 'An internship, told like a magazine.',
+    text: 'Discover the report behind my final-year internship.',
+    cta: 'Discover the report',
+    color: '#f5c451',
+  },
+  {
+    href: '/experiences/expleo',
+    eyebrow: 'Experience · Expleo',
+    title: 'An interface, built from scratch.',
+    text: 'Discover the GUI I designed and developed from the ground up.',
+    cta: 'Discover the experience',
+    color: '#a78bfa',
+  },
+  {
+    href: '/experiences/dassault-systemes',
+    eyebrow: 'Experience · Dassault Systèmes',
+    title: 'Details make the difference.',
+    text: 'Discover how I reworked the styling of a Git platform at DS.',
+    cta: 'Discover the experience',
+    color: '#3b82f6',
+  },
+];
