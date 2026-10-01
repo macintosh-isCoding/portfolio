@@ -1,17 +1,47 @@
 ---
-const links = [
-  { href: '/', label: 'Home' },
-  { href: '/projects/final-year-project', label: 'Final-year project' },
-  { href: '/projects/internship', label: 'Internship' },
+const sections = [
+  {
+    label: 'Projects',
+    items: [
+      { href: '/projects/final-year-project', label: 'Final Year Project', color: '#ff4d8d' },
+      { href: '/projects/rerailing-simulation', label: 'Rerailing Simulation', color: '#a3e635' },
+      { href: '/projects/chassis-detection', label: 'Chassis Detection', color: '#22d3ee' },
+      { href: '/projects/stock-portfolio', label: 'Stock Portfolio', color: '#34d399' },
+    ],
+  },
+  {
+    label: 'Experience',
+    items: [
+      { href: '/experiences/loreal', label: "L'Oréal", color: '#f5c451' },
+      { href: '/experiences/expleo', label: 'Expleo', color: '#a78bfa' },
+      { href: '/experiences/dassault-systemes', label: 'Dassault Systèmes', color: '#3b82f6' },
+    ],
+  },
 ];
 ---
 <header class="sticky top-0 z-50 border-b border-white/10 bg-base/70 backdrop-blur-xl">
   <nav class="mx-auto flex h-14 max-w-6xl items-center justify-between px-6">
     <a href="/" class="text-sm font-semibold tracking-tight">Maxence Klein</a>
-    <ul class="flex gap-8 text-sm text-muted">
-      {links.map((link) => (
-        <li>
-          <a href={link.href} class="transition-colors hover:text-ink">{link.label}</a>
+    <ul class="flex items-center gap-8 text-sm text-muted">
+      <li><a href="/" class="transition-colors hover:text-ink">Home</a></li>
+      {sections.map((section) => (
+        <li class="group relative">
+          <button class="flex items-center gap-1 transition-colors group-hover:text-ink group-focus-within:text-ink">
+            {section.label}
+            <span aria-hidden="true" class="text-xs">▾</span>
+          </button>
+          <div class="invisible absolute right-0 top-full pt-3 opacity-0 transition duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <ul class="w-60 rounded-2xl border border-white/10 bg-surface/95 p-2 shadow-2xl backdrop-blur-xl">
+              {section.items.map((item) => (
+                <li>
+                  <a href={item.href} class="flex items-center gap-3 rounded-xl px-3 py-2 text-ink transition-colors hover:bg-white/10">
+                    <span class="h-2.5 w-2.5 rounded-full" style={`background:${item.color}`}></span>
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </li>
       ))}
     </ul>

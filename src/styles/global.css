@@ -13,11 +13,16 @@
 }
 
 :root {
-  --accent: #6ea8ff;
+  --accent: #f5f5f7;
 }
-[data-project="final-year-project"] {
-  --accent: #ff4d8d;
-}
-[data-project="internship"] {
-  --accent: #2ee6a6;
-}
+
+/* Experiences */
+[data-project="loreal"] { --accent: #f5c451; }
+[data-project="expleo"] { --accent: #a78bfa; }
+[data-project="dassault-systemes"] { --accent: #3b82f6; }
+
+/* Projects */
+[data-project="final-year-project"] { --accent: #ff4d8d; }
+[data-project="rerailing-simulation"] { --accent: #a3e635; }
+[data-project="chassis-detection"] { --accent: #22d3ee; }
+[data-project="stock-portfolio"] { --accent: #34d399; }
