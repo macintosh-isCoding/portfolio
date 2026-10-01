@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import HeroCarousel from '../components/HeroCarousel.tsx';
+import About from '../components/About.astro';
+import Journey from '../components/Journey.astro';
+import Contact from '../components/Contact.astro';
 import { slides } from '../data/slides';
 ---
 <Layout title="Maxence Klein's Portfolio">
   <HeroCarousel client:load slides={slides} />
-
-  <section class="mx-auto max-w-6xl px-6 py-32">
-    <p class="text-muted">About me: coming in step 5.</p>
-  </section>
+  <About />
+  <Journey />
+  <Contact />
 </Layout>

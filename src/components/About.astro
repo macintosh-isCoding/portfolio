@@ -1,0 +1,23 @@
+---
+import { profile } from '../data/profile';
+---
+<section id="about" class="mx-auto max-w-6xl px-6 py-32 lg:px-24">
+  <div class="grid items-center gap-16 md:grid-cols-5">
+    <div class="reveal md:col-span-3">
+      <p class="mb-4 text-sm font-medium uppercase tracking-widest text-muted">About</p>
+      <h2 class="text-4xl font-semibold tracking-tight md:text-6xl">
+        Intelligent systems, <span class="text-muted">thoughtfully built.</span>
+      </h2>
+      <p class="mt-8 max-w-xl text-lg leading-relaxed text-muted">
+        I'm an {profile.role} graduated from ESEO. I turn complex problems, from reinforcement
+        learning to computer vision, into products people actually want to use.
+      </p>
+    </div>
+
+    <div class="reveal md:col-span-2">
+      <div class="mx-auto grid aspect-[4/5] w-full max-w-sm place-items-center rounded-[2rem] border border-white/10 bg-surface text-6xl font-semibold text-muted">
+        MK
+      </div>
+    </div>
+  </div>
+</section>

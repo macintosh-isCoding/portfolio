@@ -26,3 +26,21 @@
 [data-project="rerailing-simulation"] { --accent: #a3e635; }
 [data-project="chassis-detection"] { --accent: #22d3ee; }
 [data-project="stock-portfolio"] { --accent: #34d399; }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
