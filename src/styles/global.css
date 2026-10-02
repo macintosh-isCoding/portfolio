@@ -16,18 +16,6 @@
   --accent: #f5f5f7;
 }
 
-/* Experiences */
-[data-project="loreal"] { --accent: #ff7ab8; }
-[data-project="expleo"] { --accent: #a78bfa; }
-[data-project="dassault-systemes"] { --accent: #3b82f6; }
-
-/* Projects */
-[data-project="final-year-project"] { --accent: #ff8a3d; }
-[data-project="rerailing-simulation"] { --accent: #a3e635; }
-[data-project="chassis-detection"] { --accent: #22d3ee; }
-[data-project="stock-portfolio"] { --accent: #f7c948; }
-[data-project="portfolio-website"] { --accent: #e5e7eb; }
-
 /* Scroll reveal */
 .reveal {
   opacity: 0;

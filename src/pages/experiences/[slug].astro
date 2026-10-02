@@ -1,0 +1,29 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ExperienceHero from '../../components/ExperienceHero.astro';
+import KpiGrid from '../../components/KpiGrid.astro';
+import { experiences } from '../../data/experiences';
+
+export function getStaticPaths() {
+  return experiences.map((experience) => ({
+    params: { slug: experience.slug },
+    props: { experience },
+  }));
+}
+
+const { experience } = Astro.props;
+---
+<Layout title={`${experience.name} · Maxence Klein`} accent={experience.color}>
+  <ExperienceHero experience={experience} />
+  <KpiGrid kpis={experience.kpis} />
+
+  <section class="mx-auto max-w-6xl px-6 py-24 lg:px-24">
+    <div class="reveal max-w-3xl">
+      <p class="mb-4 text-sm font-medium uppercase tracking-widest text-accent">The mission</p>
+      <p class="text-2xl leading-relaxed md:text-3xl">{experience.mission}</p>
+      <p class="mt-8 text-sm text-muted">
+        <span class="text-ink">My role.</span> {experience.role}
+      </p>
+    </div>
+  </section>
+</Layout>

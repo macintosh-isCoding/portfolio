@@ -1,0 +1,32 @@
+---
+import type { Experience } from '../data/experiences';
+
+interface Props {
+  experience: Experience;
+}
+
+const { experience } = Astro.props;
+---
+<section
+  class="relative isolate overflow-hidden"
+  style="background: radial-gradient(60% 55% at 72% 35%, color-mix(in srgb, var(--accent) 28%, transparent), transparent);"
+>
+  <div class="mx-auto grid min-h-[70svh] max-w-6xl grid-cols-1 items-center gap-10 px-6 py-24 md:grid-cols-2 lg:px-24">
+    <div class="reveal">
+      <p class="mb-4 text-sm font-medium uppercase tracking-widest text-accent">
+        Experience · {experience.period}
+      </p>
+      <h1 class="text-5xl font-semibold tracking-tight md:text-7xl">{experience.name}</h1>
+      <p class="mt-6 max-w-md text-lg text-muted">{experience.subtitle}</p>
+    </div>
+
+    <div aria-hidden="true" class="relative mx-auto hidden aspect-square w-full max-w-sm md:block">
+      <div class="absolute inset-0 rounded-full bg-accent/30 blur-3xl"></div>
+      <div class="absolute inset-10 grid place-items-center rounded-[2.5rem] border border-white/10 bg-white/5 text-sm text-muted backdrop-blur-xl">
+        3D object
+      </div>
+    </div>
+  </div>
+
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-base to-transparent"></div>
+</section>

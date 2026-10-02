@@ -1,22 +1,23 @@
 ---
+import { experiences } from '../data/experiences';
+import { projects } from '../data/projects';
+
 const sections = [
   {
     label: 'Projects',
-    items: [
-      { href: '/projects/final-year-project', label: 'Final Year Project', color: '#ff8a3d' },
-      { href: '/projects/rerailing-simulation', label: 'Rerailing Simulation', color: '#a3e635' },
-      { href: '/projects/chassis-detection', label: 'Chassis Detection', color: '#22d3ee' },
-      { href: '/projects/stock-portfolio', label: 'Stock Portfolio', color: '#f7c948' },
-      { href: '/projects/portfolio-website', label: 'This Website', color: '#e5e7eb' },
-    ],
+    items: projects.map((p) => ({
+      href: `/projects/${p.slug}`,
+      label: p.name,
+      color: p.color,
+    })),
   },
   {
     label: 'Experience',
-    items: [
-      { href: '/experiences/loreal', label: "L'Oréal", color: '#ff7ab8' },
-      { href: '/experiences/expleo', label: 'Expleo', color: '#a78bfa' },
-      { href: '/experiences/dassault-systemes', label: 'Dassault Systèmes', color: '#3b82f6' },
-    ],
+    items: experiences.map((e) => ({
+      href: `/experiences/${e.slug}`,
+      label: e.name,
+      color: e.color,
+    })),
   },
 ];
 ---

@@ -5,12 +5,12 @@ import Navbar from '../components/Navbar.astro';
 
 interface Props {
   title: string;
-  project?: string;
+  accent?: string;
 }
 
-const { title, project } = Astro.props;
+const { title, accent } = Astro.props;
 ---
-<html lang="en" data-project={project}>
+<html lang="en" style={accent ? `--accent: ${accent}` : undefined}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,8 +21,8 @@ const { title, project } = Astro.props;
     <main>
       <slot />
     </main>
-  </body>
-  <script>
+
+    <script>
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
@@ -36,4 +36,5 @@ const { title, project } = Astro.props;
       );
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     </script>
+  </body>
 </html>
