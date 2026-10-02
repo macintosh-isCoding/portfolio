@@ -1,5 +1,5 @@
 export type Kpi = { value: string; label: string; detail: string };
-export type Tool = { name: string; why: string };
+export type Tool = { name: string; icon?: string; why: string };
 export type Block = { title: string; text: string };
 export type Deliverable = {
   title: string;
@@ -36,8 +36,15 @@ export const experiences: Experience[] = [
       { value: 'XX', label: 'Third key figure', detail: 'What this number measures.' },
     ],
     mission: 'A short paragraph presenting the mission goes here.',
-    tools: [],
-    difficulties: [],
+    tools: [
+      { name: 'Python', icon: 'siPython', why: 'Why this tool was used goes here.' },
+      { name: 'Git', icon: 'siGit', why: 'Why this tool was used goes here.' },
+      { name: 'Internal tool', why: 'A tool without a public icon shows its initial.' },
+    ],
+    difficulties: [
+      { title: 'First difficulty', text: 'What happened, and how you solved it.' },
+      { title: 'Second difficulty', text: 'What happened, and how you solved it.' },
+    ],
     deliverables: [],
     openings: '',
   },

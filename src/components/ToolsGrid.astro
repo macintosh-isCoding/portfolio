@@ -1,0 +1,44 @@
+---
+import * as icons from 'simple-icons';
+import type { Tool } from '../data/experiences';
+
+interface Props {
+  tools: Tool[];
+}
+
+const { tools } = Astro.props;
+
+const iconSet = icons as unknown as Record<string, { path: string } | undefined>;
+const items = tools.map((tool) => ({
+  ...tool,
+  svgPath: tool.icon ? iconSet[tool.icon]?.path : undefined,
+}));
+---
+<section class="mx-auto max-w-6xl px-6 py-24 lg:px-24">
+  <div class="reveal">
+    <p class="mb-4 text-sm font-medium uppercase tracking-widest text-accent">Tools</p>
+    <h2 class="text-3xl font-semibold tracking-tight md:text-5xl">
+      What I worked with<span class="text-muted">.</span>
+    </h2>
+  </div>
+
+  <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+    {items.map((tool, i) => (
+      <div class="reveal" style={`transition-delay: ${i * 80}ms`}>
+        <div class="flex h-full min-h-56 flex-col rounded-3xl border border-white/10 bg-surface p-6 transition duration-300 hover:scale-[1.04] hover:border-accent/50 hover:bg-white/10">
+          <div class="grid h-14 w-14 place-items-center rounded-2xl bg-white/5 text-accent">
+            {tool.svgPath ? (
+              <svg viewBox="0 0 24 24" class="h-7 w-7" fill="currentColor" aria-hidden="true">
+                <path d={tool.svgPath} />
+              </svg>
+            ) : (
+              <span class="text-xl font-semibold">{tool.name.charAt(0)}</span>
+            )}
+          </div>
+          <h3 class="mt-auto pt-6 text-lg font-semibold tracking-tight">{tool.name}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-muted">{tool.why}</p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

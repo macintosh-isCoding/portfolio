@@ -3,6 +3,8 @@ import Layout from '../../layouts/Layout.astro';
 import ExperienceHero from '../../components/ExperienceHero.astro';
 import KpiGrid from '../../components/KpiGrid.astro';
 import { experiences } from '../../data/experiences';
+import ToolsGrid from '../../components/ToolsGrid.astro';
+import Difficulties from '../../components/Difficulties.astro';
 
 export function getStaticPaths() {
   return experiences.map((experience) => ({
@@ -26,4 +28,6 @@ const { experience } = Astro.props;
       </p>
     </div>
   </section>
+  {experience.tools.length > 0 && <ToolsGrid tools={experience.tools} />}
+  {experience.difficulties.length > 0 && <Difficulties items={experience.difficulties} />}
 </Layout>
