@@ -31,4 +31,12 @@ export const slides = [
     cta: 'Discover the experience',
     color: '#3b82f6',
   },
+    {
+    href: '/projects/portfolio-website',
+    eyebrow: 'Project · This website',
+    title: "You're looking at it.",
+    text: 'Discover how this website was designed and coded from scratch.',
+    cta: 'Discover the project',
+    color: '#ff6b3d',
+  },
 ];

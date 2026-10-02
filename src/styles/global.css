@@ -26,6 +26,7 @@
 [data-project="rerailing-simulation"] { --accent: #a3e635; }
 [data-project="chassis-detection"] { --accent: #22d3ee; }
 [data-project="stock-portfolio"] { --accent: #34d399; }
+[data-project="portfolio-website"] { --accent: #ff6b3d; }
 
 /* Scroll reveal */
 .reveal {
