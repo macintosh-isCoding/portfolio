@@ -5,7 +5,7 @@ export const slides = [
     title: 'Worlds that never repeat.',
     text: 'An intelligent roguelike where procedural generation meets reinforcement learning.',
     cta: 'Discover the project',
-    color: '#ff4d8d',
+    color: '#ff8a3d',
   },
   {
     href: '/experiences/loreal',
@@ -13,7 +13,7 @@ export const slides = [
     title: 'An internship, told like a magazine.',
     text: 'Discover the report behind my final-year internship.',
     cta: 'Discover the report',
-    color: '#f5c451',
+    color: '#d63aa6',
   },
   {
     href: '/experiences/expleo',
@@ -37,6 +37,6 @@ export const slides = [
     title: "You're looking at it.",
     text: 'Discover how this website was designed and coded from scratch.',
     cta: 'Discover the project',
-    color: '#ff6b3d',
+    color: '#e5e7eb',
   },
 ];

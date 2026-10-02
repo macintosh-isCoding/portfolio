@@ -12,7 +12,7 @@ export const journey = [
     place: "L'Oréal Group",
     text: 'AI & Data Specialist in People Development & Learning team. Lifecycle Management of GenAI Solutions, Prompt Engineering & Strategic Vision.',
     href: '/experiences/loreal',
-    color: '#f5c451',
+    color: '#ff7ab8',
   },
   {
     period: '4 months - 2024',
