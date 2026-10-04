@@ -1,0 +1,19 @@
+---
+interface Props {
+  label: string;
+  name: string;
+  href: string;
+  color: string;
+}
+
+const { label, name, href, color } = Astro.props;
+---
+<section class="border-t border-white/10" style={`--accent: ${color}`}>
+  <a href={href} class="group mx-auto block max-w-6xl px-6 py-24 lg:px-24">
+    <p class="text-sm font-medium uppercase tracking-widest text-muted">{label}</p>
+    <p class="mt-4 flex items-center gap-4 text-4xl font-semibold tracking-tight transition-colors duration-300 group-hover:text-accent md:text-6xl">
+      {name}
+      <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-2">→</span>
+    </p>
+  </a>
+</section>

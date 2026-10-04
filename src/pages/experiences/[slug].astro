@@ -2,9 +2,12 @@
 import Layout from '../../layouts/Layout.astro';
 import ExperienceHero from '../../components/ExperienceHero.astro';
 import KpiGrid from '../../components/KpiGrid.astro';
-import { experiences } from '../../data/experiences';
 import ToolsGrid from '../../components/ToolsGrid.astro';
 import Difficulties from '../../components/Difficulties.astro';
+import Deliverables from '../../components/Deliverables.astro';
+import NextPage from '../../components/NextPage.astro';
+import Contact from '../../components/Contact.astro';
+import { experiences } from '../../data/experiences';
 
 export function getStaticPaths() {
   return experiences.map((experience) => ({
@@ -14,6 +17,9 @@ export function getStaticPaths() {
 }
 
 const { experience } = Astro.props;
+
+const index = experiences.findIndex((e) => e.slug === experience.slug);
+const next = experiences[(index + 1) % experiences.length];
 ---
 <Layout title={`${experience.name} · Maxence Klein`} accent={experience.color}>
   <ExperienceHero experience={experience} />
@@ -28,6 +34,20 @@ const { experience } = Astro.props;
       </p>
     </div>
   </section>
+
   {experience.tools.length > 0 && <ToolsGrid tools={experience.tools} />}
   {experience.difficulties.length > 0 && <Difficulties items={experience.difficulties} />}
+  {experience.deliverables.length > 0 && <Deliverables items={experience.deliverables} />}
+
+  {experience.openings && (
+    <section class="mx-auto max-w-6xl px-6 py-24 lg:px-24">
+      <div class="reveal max-w-3xl">
+        <p class="mb-4 text-sm font-medium uppercase tracking-widest text-accent">Looking ahead</p>
+        <p class="text-2xl leading-relaxed md:text-3xl">{experience.openings}</p>
+      </div>
+    </section>
+  )}
+
+  <NextPage label="Next experience" name={next.name} href={`/experiences/${next.slug}`} color={next.color} />
+  <Contact />
 </Layout>

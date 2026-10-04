@@ -1,0 +1,59 @@
+---
+import type { Deliverable } from '../data/experiences';
+
+interface Props {
+  items: Deliverable[];
+}
+
+const { items } = Astro.props;
+
+const statusStyles = {
+  achieved: {
+    label: 'Achieved',
+    classes: 'bg-emerald-400/10 text-emerald-300 ring-emerald-400/30',
+  },
+  partial: {
+    label: 'Partially achieved',
+    classes: 'bg-amber-400/10 text-amber-300 ring-amber-400/30',
+  },
+  missed: {
+    label: 'Not achieved',
+    classes: 'bg-rose-400/10 text-rose-300 ring-rose-400/30',
+  },
+};
+---
+<section class="mx-auto max-w-6xl px-6 py-24 lg:px-24">
+  <div class="reveal">
+    <p class="mb-4 text-sm font-medium uppercase tracking-widest text-accent">Deliverables</p>
+    <h2 class="text-3xl font-semibold tracking-tight md:text-5xl">
+      What I delivered<span class="text-muted">.</span>
+    </h2>
+  </div>
+
+  <div class="mt-12 grid gap-4 md:grid-cols-2">
+    {items.map((item, i) => (
+      <div class="reveal" style={`transition-delay: ${i * 80}ms`}>
+        <article class="flex h-full flex-col rounded-3xl border border-white/10 bg-surface p-8 transition duration-300 hover:scale-[1.02] hover:border-accent/50">
+          <span class={`w-fit rounded-full px-3 py-1 text-xs font-medium ring-1 ring-inset ${statusStyles[item.status].classes}`}>
+            {statusStyles[item.status].label}
+          </span>
+          <h3 class="mt-5 text-xl font-semibold tracking-tight">{item.title}</h3>
+          <p class="mb-8 mt-2 leading-relaxed text-muted">{item.text}</p>
+
+          {(item.target || item.result) && (
+            <dl class="mt-auto grid grid-cols-2 gap-4 border-t border-white/10 pt-6 text-sm">
+              <div>
+                <dt class="text-muted">Target</dt>
+                <dd class="mt-1 text-lg font-semibold">{item.target ?? '—'}</dd>
+              </div>
+              <div>
+                <dt class="text-muted">Result</dt>
+                <dd class="mt-1 text-lg font-semibold text-accent">{item.result ?? '—'}</dd>
+              </div>
+            </dl>
+          )}
+        </article>
+      </div>
+    ))}
+  </div>
+</section>

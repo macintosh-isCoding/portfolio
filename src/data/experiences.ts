@@ -5,6 +5,8 @@ export type Deliverable = {
   title: string;
   text: string;
   status: 'achieved' | 'partial' | 'missed';
+  target?: string;
+  result?: string;
 };
 
 export type Experience = {
@@ -45,8 +47,30 @@ export const experiences: Experience[] = [
       { title: 'First difficulty', text: 'What happened, and how you solved it.' },
       { title: 'Second difficulty', text: 'What happened, and how you solved it.' },
     ],
-    deliverables: [],
-    openings: '',
+        deliverables: [
+      {
+        title: 'First deliverable',
+        text: 'What was delivered, and why it matters.',
+        status: 'achieved',
+        target: 'XX',
+        result: 'XX',
+      },
+      {
+        title: 'Second deliverable',
+        text: 'What was delivered, and why it matters.',
+        status: 'partial',
+        target: 'XX',
+        result: 'XX',
+      },
+      {
+        title: 'Third deliverable',
+        text: 'What was planned, and what stopped it.',
+        status: 'missed',
+        target: 'XX',
+        result: 'XX',
+      },
+    ],
+    openings: 'What could come next: improvements, extensions and lessons for the future.',
   },
   {
     slug: 'expleo',
